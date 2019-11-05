@@ -4,15 +4,13 @@ import android.app.job.JobInfo
 import android.app.job.JobScheduler
 import android.content.ComponentName
 import android.content.Context
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 
- class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
      val TAG = MainActivity::class.simpleName
 
@@ -27,7 +25,7 @@ import androidx.core.content.ContextCompat
      @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
      fun scheduleJob() {
 
-         val componentName = ComponentName(this, MyJobService::class.java)
+         val componentName = ComponentName(this, LocationTrackingJobService::class.java)
          val info = JobInfo.Builder(123, componentName)
              .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
              .setPersisted(true)

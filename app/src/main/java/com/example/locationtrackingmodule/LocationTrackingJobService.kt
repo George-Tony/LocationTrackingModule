@@ -25,11 +25,11 @@ import org.json.JSONException
 import org.json.JSONObject
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-class MyJobService : JobService() {
+class LocationTrackingJobService : JobService() {
 
     lateinit var location: Location
     private val jobCancelled = false
-    private val TAG = MyJobService::class.simpleName
+    private val TAG = LocationTrackingJobService::class.simpleName
 
     override fun onStopJob(params: JobParameters?): Boolean {
 
